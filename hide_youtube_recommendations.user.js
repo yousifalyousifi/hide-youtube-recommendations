@@ -26,8 +26,12 @@ var censorRule = function(selector, color) {
 
 
 var RULES = [
-    censorRule('#video-title:not(.ytd-playlist-panel-video-renderer)', '#030303'),
-    hideRule('ytd-thumbnail:not(.ytd-playlist-panel-video-renderer)')];
+    censorRule('#video-title:not(.ytd-playlist-panel-video-renderer)', '#030303'), //Title
+    censorRule('#related .secondary-metadata #text'),//Channel Name
+    censorRule('#related .secondary-metadata #metadata-line'), //Views Count and Posted Date
+    censorRule('#related .badge'), //LIVE and NEW Badges and Episode Titles (eg: "5 Levels  S1 E7")
+    hideRule('#related .secondary-metadata yt-icon'), //LIVE icon, CHECKMARK icon
+    hideRule('ytd-thumbnail:not(.ytd-playlist-panel-video-renderer)')]; //Thumbnail
 
 var URL_BLACKLIST = ['subscriptions', 'library', 'history', 'videos', 'playlist', 'results', 'channel', '/c/', 'user'];
 
