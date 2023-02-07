@@ -26,13 +26,13 @@ var censorRule = function(selector, color) {
 
 
 var RULES = [
-    censorRule('#video-title:not(.ytd-playlist-panel-video-renderer)', '#030303'), //Title
+    censorRule('#related #video-title:not(.ytd-playlist-panel-video-renderer)', '#0D0D0D'), //Title
     censorRule('#related .secondary-metadata #text'),//Channel Name
     censorRule('#related .secondary-metadata #metadata-line'), //Views Count and Posted Date
-    censorRule('#related .badge'), //LIVE and NEW Badges and Episode Titles (eg: "5 Levels  S1 E7")
+    censorRule('#related .badge'), //LIVE and NEW Badges, and Episode Titles (eg: "5 Levels  S1 E7")
     hideRule('#related .secondary-metadata yt-icon'), //LIVE icon, CHECKMARK icon
-    hideRule('ytd-playlist-thumbnail:not(.ytd-playlist-panel-video-renderer)'), //Recommended Playlist Thumbnail
-    hideRule('ytd-thumbnail:not(.ytd-playlist-panel-video-renderer)')]; //Recommended Video Thumbnail
+    hideRule('#related ytd-playlist-thumbnail:not(.ytd-playlist-panel-video-renderer)'), //Recommended Playlist Thumbnail
+    hideRule('#related ytd-thumbnail:not(.ytd-playlist-panel-video-renderer)')]; //Recommended Video Thumbnail
 
 var URL_BLACKLIST = ['subscriptions', 'library', 'history', 'videos', 'playlist', 'results', 'channel', '/c/', 'user'];
 
